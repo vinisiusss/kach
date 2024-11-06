@@ -1,0 +1,421 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #282a2e;
+    color: #FFF;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.logo {
+    max-height: 40px;
+}
+
+.active {
+    color: #8653AE !important;
+    text-shadow: none !important; 
+    box-shadow: none !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+/* --------------------- HEADER --------------------- */
+.open {
+    display: flex !important;
+}
+
+.header {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #282a2e;
+
+}
+
+.header--fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__nav ul {
+    display: flex;
+    align-items: center;
+}
+
+.header__nav li+li {
+    margin-left: 50px;
+    
+}
+
+.header__nav a {
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    text-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+/* burger menu */
+
+.burger {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+}
+
+.burger span {
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background: #fff;
+}
+
+.burger::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+}
+
+.burger::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 60%;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+}
+
+.burger::before{top: 0}
+
+.burger::after {bottom: 0}
+
+/* Добавляем класс active для анимации иконки */
+
+.burger.active span {transform: scale(0)}
+
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after {
+    width: 100%;
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+/* --------------------- WELCOME --------------------- */
+
+.welcome {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    background-image: url("../img/welcome/welc2.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.quote {
+    max-width: 720px;
+}
+
+.quote__text {
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 1.4em;
+}
+
+.quote__author {
+    margin-top: 80px;
+    font-size: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+/* --------------------- EXERCICES --------------------- */
+
+.introduction {
+    padding: 20px;
+    line-height: 1.1em;
+    background-color: #3B3E44;
+    border-radius: 30px;
+}
+
+.main {
+
+}
+
+.exercices {
+
+}
+
+.exercices__wrapper {
+    margin-top: 50px;
+}
+
+.exercices__buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.btn {
+    width: 140px;
+    height: 50px;
+    border-radius: 20px;
+
+    color: #ffffff;
+    background-color: #3B3E44;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+}
+
+.exercices__item {
+    position: relative;
+    margin: 20px 0;
+    border-radius: 15px 15px 30px 30px;
+    background-color: #3B3E44;
+}
+
+.exercices__nav {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    padding: 10px;
+    border-radius: 15px 15px 0px 0px;
+    background-color: #3B3E44;
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.6);
+
+}
+
+.exercices__nav ul{  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.exercices__nav a {
+    font-weight: 500;
+}
+
+.group {
+    position: relative;
+}
+
+.group__title {
+    position: sticky;
+    top: 35px;
+    padding: 15px;
+    background-color: #282a2e;
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+
+.group__title--above {
+    top: 35px !important;
+}
+
+.group__cards {
+    display: grid;
+    /* grid-template-columns: repeat(5,1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-flow: row;
+    row-gap: 30px;
+    column-gap: 15px;
+
+    justify-items: center;
+
+    padding: 15px;
+}
+
+.card {
+    width: 200px;
+    height: 220px;
+    padding: 10px 20px;
+    text-align: center;
+
+    background-color: #fff;
+    border-radius: 30px;
+
+}
+
+.card__img {
+    width: 140px;
+}
+
+.card__text {
+    margin-top: 10px;
+
+    font-weight: 500;
+    line-height: 19px;
+    color: #232323;
+}
+/* --------------------- TRAINING --------------------- */
+
+.training__title {
+    padding: 16px;
+    text-align: center;
+    margin: 0 auto;
+
+    max-width: 400px;
+    max-height: 60px;
+    border-radius: 30px;
+    
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    background-color: #3B3E44;
+}
+
+
+.training__item {
+    margin: 20px 0;
+    border-radius: 15px 15px 30px 30px;
+    background-color: #3B3E44;
+}
+
+.group__title.group__title--training {
+    top: 0;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, .1) inset;
+}
+/* --------------------- FOOTER --------------------- */
+
+.footer {
+    background-color: #282a2e;
+    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.6);
+
+    padding: 10px 0;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer__logo{
+    height: 25px;
+}
+
+.footer__contacts ul {
+    display: flex;
+    gap: 5px;
+}
+
+.footer__contacts img {
+    height: 25px;
+}
+
+/* --------------------- ANIMATIONS --------------------- */
+@keyframes burgerAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+/* --------------------- ADAPTIVE --------------------- */
+
+@media (max-width: 700px) {
+    .burger {display: flex;}
+
+    .header__nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        z-index: 50;
+        overflow-y: auto;
+        padding: 50px 40px;
+        background-color: rgba(40, 42, 46, .99);
+
+        animation: burgerAnimation .4s;
+    }
+
+    .header__nav ul {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .header__nav li+li {
+    margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .quote__text {
+        font-size: 20px;
+    }
+
+    .quote__author {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:403px) {
+    .group__title {
+    top: 76px;  
+    }
+
+    .training__title {
+        font-size: 20px;
+        padding: 14px;
+    }
+
+    .group__title--training {
+        font-size: 16px;
+    }
+
+    .quote__text {
+        font-size: 16px;
+    }
+    .quote__author {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 339px){
+    .exercices__buttons {
+        row-gap: 10px;
+    }
+
+    .exercices__wrapper {
+        margin-top: 15px;
+    }
+}
